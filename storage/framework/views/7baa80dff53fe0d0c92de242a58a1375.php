@@ -692,7 +692,7 @@
                 <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $for_people; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="item" data-parallax='{"y": <?php echo e($people_key%2==0?'-':''); ?>100}'>
                     <div class="box">
-                        <img src="<?php echo e(asset('uploads/'.$item->img)); ?>" alt="<?php echo e($item->text); ?>" loading="lazy" decoding="async">
+                        <img src="<?php echo e(asset('uploads/'.($item->img ?? ''))); ?>" alt="<?php echo e($item->text ?? ''); ?>" loading="lazy" decoding="async">
                     </div>
                     <p class="text"><?php echo e($item->text); ?></p>
                 </div>
