@@ -11,6 +11,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        $middleware->trustProxies(
+            at: '*',
+            headers: \Illuminate\Http\Middleware\TrustProxies::HEADER_X_FORWARDED_ALL
+        );
+
         $middleware->alias([
             'defend' => \App\Http\Middleware\DefendMiddleware::class,
             'redirect.device' => \App\Http\Middleware\RedirectDeviceMiddleware::class,
