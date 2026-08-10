@@ -13,7 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->trustProxies(
             at: '*',
-            headers: \Illuminate\Http\Middleware\TrustProxies::HEADER_X_FORWARDED_ALL
+            headers: \Illuminate\Http\Request::HEADER_X_FORWARDED_ALL
         );
 
         $middleware->alias([
