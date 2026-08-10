@@ -36,7 +36,6 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->font('Inter')
             ->favicon(asset('favicon.ico'))
-            ->spa()
             ->collapsibleNavigationGroups()
             ->navigationGroups([
                 '訂單管理',
