@@ -13,7 +13,10 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->trustProxies(
             at: '*',
-            headers: \Illuminate\Http\Request::HEADER_X_FORWARDED_ALL
+            headers: \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_FOR |
+                \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_HOST |
+                \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_PROTO |
+                \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_PORT
         );
 
         $middleware->alias([
