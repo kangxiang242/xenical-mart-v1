@@ -1,0 +1,6 @@
+/cache/data
+/cache/*.php
+/sessions/*
+/views/*
+!sessions/.gitignore
+!views/.gitignore
