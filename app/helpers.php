@@ -196,7 +196,7 @@ if (! function_exists('template')) {
      * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory
      */
     function template($view = null, $data = [], $mergeData = []){
-        $device = \App\Handlers\DeviceTypeHandlers::isMobile() ? 'mobile' : 'web';
+        $device = 'web';
 
         return view($device.'.'.$view, $data, $mergeData);
     }
